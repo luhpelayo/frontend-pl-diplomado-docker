@@ -19,7 +19,7 @@ RUN npm run build
 # Puerto en el que la aplicación estará escuchando
 EXPOSE 3000
 
-# Variables de entorno para la conexión a la base de datos PostgreSQL
+# Variables de entorno para la conexión con el backend
 ENV REACT_APP_API_URL=http://localhost:8800/
 
 # Comando para iniciar la aplicación
