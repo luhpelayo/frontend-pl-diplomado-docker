@@ -1,0 +1,380 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI';
+}
+/* Estilos para el encabezado (header) */
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 40px 100px;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  /* Estilos para pantalla mediana */
+  @media (max-width: 991px) {
+    padding: 20px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Estilos para pantalla pequeña */
+  @media (max-width: 767px) {
+    padding: 15px;
+  }
+}
+
+/* Estilos para el logo */
+.header .logo {
+  color: #ffffff;
+  text-transform: uppercase;
+  cursor: pointer;
+  margin-bottom: 10px;
+
+  /* Estilos para pantalla mediana */
+  @media (max-width: 991px) {
+    font-size: 1.5em;
+  }
+
+  /* Estilos para pantalla pequeña */
+  @media (max-width: 767px) {
+    font-size: 1.2em;
+  }
+}
+
+/* Estilos para la navegación */
+.container {
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* Estilos para pantalla mediana */
+  @media (max-width: 991px) {
+    margin-top: 20px;
+  }
+}
+
+/* Otros estilos ... */
+
+
+nav ul li {
+    list-style: none;
+    display: inline-grid;
+    padding: 15px 35px;
+    margin: 10px;
+    font-size: 18px;
+    font-weight: 500;
+    color: #ffffff;
+    cursor: pointer;
+    position: relative;
+    z-index: 2;
+    transition: color 0.4s;
+}
+nav ul li::after {
+    content: '';
+    background: #ffffff;
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    opacity: 0;
+}
+
+nav ul li:hover {
+color: #069be0;
+}
+
+nav ul li:hover::after {
+    top: 50%;
+    opacity: 1;
+}
+.showcase {
+    position: absolute;
+    right: 0;
+    width: 100%;
+    min-height: 100vh;
+    padding: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #111;
+    transition: 0.5s;
+    z-index: 2;
+}
+
+.showcase.active {
+    right: 300px;
+}
+
+.showcase video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.9;
+}
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #156275;
+    mix-blend-mode: overlay;
+}
+
+.text {
+    position: relative;
+    z-index: 10;
+}
+
+.text h2 {
+    font-size: 3em;
+    font-weight: 800;
+    color: #fff;
+    line-height: 1em;
+    text-transform: uppercase;
+}
+
+.text h3 {
+    font-size: 5em;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1em;
+    text-transform: uppercase;
+}
+
+.text p {
+    font-size: 1.1em;
+    color: #fff;
+    margin: 20px 0;
+    font-weight: 400;
+    max-width: 700px;
+}
+
+.text a {
+    display: inline-block;
+    font-size: 1em;
+    background: #fff;
+    padding: 10px 30px;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: 500;
+    margin-top: 10px;
+    color: #111;
+    letter-spacing: 2px;
+    transition: 0.2s;
+}
+
+.text a:hover {
+    letter-spacing: 6px;
+}
+
+.social {
+    position: absolute;
+    z-index: 10;
+    bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.social li {
+    list-style: none;
+}
+
+.social li a {
+    display: inline-block;
+    margin-right: 20px;
+    filter: invert(1);
+    transform: scale(0.5);
+    transition: 0.5s;
+}
+
+.social li a:hover {
+    transform: scale(0.5) translateY(-15px);
+}
+
+.menu {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 300px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu ul {
+    position: relative;
+}
+
+.menu ul li {
+    list-style: none;
+}
+
+.menu ul li a {
+    text-decoration: none;
+    font-size: 24px;
+    color: #111;
+}
+
+.menu ul li a:hover {
+    color: #03a9f4;
+}
+
+@media (max-width: 991px) {
+
+    .showcase,
+    .showcase header {
+        padding: 40px;
+    }
+
+    .text h2 {
+        font-size: 3em;
+    }
+
+    .text h3 {
+        font-size: 2em;
+    }
+}
+
+/* estilos reaponsives*/
+
+  
+  /* Otros estilos ... */
+  
+  /* Estilos para pantalla mediana */
+  @media (max-width: 991px) {
+    header {
+      padding: 20px;
+    }
+  
+    .text h2 {
+      font-size: 2.5em;
+    }
+  
+    .text h3 {
+      font-size: 1.5em;
+    }
+  
+    .showcase,
+    .showcase header {
+      padding: 20px;
+    }
+  }
+  
+  /* Estilos para pantalla pequeña */
+  @media (max-width: 767px) {
+    header {
+      padding: 15px;
+    }
+  
+    .text h2 {
+      font-size: 2em;
+    }
+  
+    .text h3 {
+      font-size: 1.2em;
+    }
+  
+    .showcase,
+    .showcase header {
+      padding: 15px;
+    }
+  }
+/* Mantener el mismo estilo para los elementos <Link> */
+/* Mantener el mismo estilo para los elementos <Link> */
+
+
+
+
+/* Estilos base para los elementos <Link> */
+.nav-link {
+  list-style: none;
+  display: inline-block; /* Cambiar a inline-block para alinear horizontalmente */
+  padding: 10px 15px; /* Reducir el padding */
+  margin: 5px;
+  font-size: 14px; /* Reducir el tamaño de fuente */
+  font-weight: 500;
+  color: #ffffff;
+  cursor: pointer;
+  position: relative;
+  z-index: 2;
+  transition: color 0.4s;
+
+  @media (max-width: 991px) {
+    padding: 8px 12px; /* Reducir el padding */
+    font-size: 12px; /* Reducir el tamaño de fuente */
+    margin: 0 5px; /* Reducir el margen horizontal */
+  }
+}
+
+.nav-link::after {
+  content: '';
+  background: #ffffff;
+  width: 20%; /* Reducir el ancho del área blanca */
+  height: 6px; /* Reducir la altura del área blanca */
+  border-radius: 10px; /* Reducir el radio de borde */
+  position: absolute;
+  top: 50%; /* Centrar verticalmente */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  opacity: 0;
+
+  @media (max-width: 991px) {
+    width: 20%; /* Reducir el ancho del área blanca */
+    height: 6px; /* Reducir la altura del área blanca */
+    border-radius: 10px; /* Reducir el radio de borde */
+    top: 50%; /* Centrar verticalmente */
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.nav-link:hover {
+  color: #069be0;
+}
+
+.nav-link:hover::after {
+  top: 70%; /* Ajustar la posición vertical al hacer hover */
+
+  @media (max-width: 991px) {
+    top: 80%; /* Ajustar la posición vertical al hacer hover */
+  }
+
+  opacity: 1;
+}
+
+
+
+/* Estilos para el logo */
+.logo {
+  color: #ffffff; /* Cambia el color del texto a blanco */
+  text-transform: uppercase;
+  cursor: pointer;
+  margin-bottom: 10px;
+
+  /* Estilos para pantalla mediana */
+  @media (max-width: 991px) {
+    font-size: 1.5em;
+  }
+
+  /* Estilos para pantalla pequeña */
+  @media (max-width: 767px) {
+    font-size: 1.2em;
+  }
+}
